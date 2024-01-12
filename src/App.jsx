@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <h1>MERN</h1>
+      <h1>MERN - Full Stack</h1>
     </>
   );
 }
