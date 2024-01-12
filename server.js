@@ -4,6 +4,7 @@ require("./config/database");
 const express = require("express");
 const path = require("path");
 const logger = require("morgan");
+const debug = require("debug")("mern:server");
 
 const app = express();
 
@@ -13,11 +14,9 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "dist")));
 
 //* routes block
-app.get("/api/", (req, res) => {
-  res.json({ hi: "world" });
-});
-app.get("/api/simon", (req, res) => {
-  res.json({ hi: "world" });
+app.get("/api", (req, res) => {
+  debug("api test");
+  res.json({ hello: "world" });
 });
 
 app.get("/*", function (req, res) {
